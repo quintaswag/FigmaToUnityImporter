@@ -113,21 +113,21 @@ namespace FigmaImporter.Editor
                 var style = node.style;
                 tmp.fontSize = style.fontSize;
                 tmp.text = node.characters;
-                var fontLinksId = AssetDatabase.FindAssets("t:FontLinks")[0];
-                FontLinks fl = AssetDatabase.LoadAssetAtPath<FontLinks>(AssetDatabase.GUIDToAssetPath(fontLinksId));
+                // var fontLinksId = AssetDatabase.FindAssets("t:FontLinks")[0];
+                // FontLinks fl = AssetDatabase.LoadAssetAtPath<FontLinks>(AssetDatabase.GUIDToAssetPath(fontLinksId));
 
-                var fontName = string.IsNullOrEmpty(style.fontPostScriptName)
-                    ? style.fontFamily
-                    : style.fontPostScriptName;
-                var font = fl.Get(fontName);
-                if (font == null)
-                {
-                    Debug.LogError(
-                        $"[FigmaImporter] Couldn't find font named {fontName}, please link it in FontLinks.asset");
-                    fl.AddName(fontName);
-                }
-                else
-                    tmp.font = font;
+                // var fontName = string.IsNullOrEmpty(style.fontPostScriptName)
+                //     ? style.fontFamily
+                //     : style.fontPostScriptName;
+                // var font = fl.Get(fontName);
+                // if (font == null)
+                // {
+                //     Debug.LogError(
+                //         $"[FigmaImporter] Couldn't find font named {fontName}, please link it in FontLinks.asset");
+                //     fl.AddName(fontName);
+                // }
+                // else
+                //     tmp.font = font;
 
                 var verticalAlignment = style.textAlignVertical;
                 var horizontalAlignment = style.textAlignHorizontal;
